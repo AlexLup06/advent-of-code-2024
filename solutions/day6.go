@@ -8,7 +8,7 @@ import (
 )
 
 type Position struct {
-	x, y, orientation int
+	X, Y, Orientation int
 }
 
 func Day6() {
@@ -36,8 +36,8 @@ func Day6() {
 		}
 
 		if string(r) == "^" {
-			position.x = len(row)
-			position.y = len(obstMap)
+			position.X = len(row)
+			position.Y = len(obstMap)
 			start = Position{len(row), len(obstMap), 3}
 			// guard looks up first
 			row = append(row, "X")
@@ -54,12 +54,12 @@ func Day6() {
 			break
 		}
 		if obstMap[newY][newX] == "#" {
-			position.orientation = (position.orientation + 1) % 4
+			position.Orientation = (position.Orientation + 1) % 4
 			continue
 		}
-		position.x = newX
-		position.y = newY
-		obstMap[position.y][position.x] = "X"
+		position.X = newX
+		position.Y = newY
+		obstMap[position.Y][position.X] = "X"
 	}
 
 	for _, row := range obstMap {
@@ -74,23 +74,23 @@ func Day6() {
 		for x, v := range row {
 			if v == "X" {
 				left := Position{x - 1, y, -1}
-				if x-1 >= 0 && !slices.Contains(possibleObstaclesPlaces, left) && obstMap[left.y][left.x] != "#" {
+				if x-1 >= 0 && !slices.Contains(possibleObstaclesPlaces, left) && obstMap[left.Y][left.X] != "#" {
 					possibleObstaclesPlaces = append(possibleObstaclesPlaces, left)
 				}
 				bottom := Position{x, y + 1, -1}
-				if y+1 < len(obstMap) && !slices.Contains(possibleObstaclesPlaces, bottom) && obstMap[bottom.y][bottom.x] != "#" {
+				if y+1 < len(obstMap) && !slices.Contains(possibleObstaclesPlaces, bottom) && obstMap[bottom.Y][bottom.X] != "#" {
 					possibleObstaclesPlaces = append(possibleObstaclesPlaces, bottom)
 				}
 				right := Position{x + 1, y, -1}
-				if x+1 < len(obstMap[0]) && !slices.Contains(possibleObstaclesPlaces, right) && obstMap[right.y][right.x] != "#" {
+				if x+1 < len(obstMap[0]) && !slices.Contains(possibleObstaclesPlaces, right) && obstMap[right.Y][right.X] != "#" {
 					possibleObstaclesPlaces = append(possibleObstaclesPlaces, right)
 				}
 				top := Position{x, y - 1, -1}
-				if y-1 >= 0 && !slices.Contains(possibleObstaclesPlaces, top) && obstMap[top.y][top.x] != "#" {
+				if y-1 >= 0 && !slices.Contains(possibleObstaclesPlaces, top) && obstMap[top.Y][top.X] != "#" {
 					possibleObstaclesPlaces = append(possibleObstaclesPlaces, top)
 				}
 				curPos := Position{x, y, -1}
-				if !slices.Contains(possibleObstaclesPlaces, curPos) && curPos.y != start.y && curPos.x != start.x && obstMap[curPos.y][curPos.x] != "#" {
+				if !slices.Contains(possibleObstaclesPlaces, curPos) && curPos.Y != start.Y && curPos.X != start.X && obstMap[curPos.Y][curPos.X] != "#" {
 					possibleObstaclesPlaces = append(possibleObstaclesPlaces, curPos)
 				}
 			}
@@ -99,7 +99,7 @@ func Day6() {
 	for y, row := range obstMap {
 		for x, v := range row {
 			if v == "X" {
-				if x != start.x && y != start.y {
+				if x != start.X && y != start.Y {
 					// count1++
 					obstMap[y][x] = "."
 				}
@@ -116,8 +116,8 @@ func Day6() {
 	count2 := 0
 	possibleObstacles := []Position{}
 	for _, obstaclePos := range possibleObstaclesPlaces {
-		x := obstaclePos.x
-		y := obstaclePos.y
+		x := obstaclePos.X
+		y := obstaclePos.Y
 		obstMap[y][x] = "#"
 
 		pathTraveled := []Position{}
@@ -136,7 +136,7 @@ func Day6() {
 
 			// the guard turns when he hits an obstacle
 			if newMapSpot == "#" {
-				position.orientation = (position.orientation + 1) % 4
+				position.Orientation = (position.Orientation + 1) % 4
 				continue
 			}
 
@@ -145,7 +145,7 @@ func Day6() {
 				if i == len(pathTraveled)-1 {
 					break
 				}
-				if field == position && pathTraveled[i+1].x == newX && pathTraveled[i+1].y == newY {
+				if field == position && pathTraveled[i+1].X == newX && pathTraveled[i+1].Y == newY {
 					isLoop = true
 					break
 				}
@@ -160,9 +160,9 @@ func Day6() {
 				break
 			}
 
-			position.x = newX
-			position.y = newY
-			obstMap[position.y][position.x] = "X"
+			position.X = newX
+			position.Y = newY
+			obstMap[position.Y][position.X] = "X"
 		}
 		// reset map
 		for i, row := range obstMap {
@@ -173,26 +173,26 @@ func Day6() {
 			}
 		}
 		obstMap[y][x] = "."
-		obstMap[start.y][start.x] = "X"
+		obstMap[start.Y][start.X] = "X"
 		position = start
 	}
 	fmt.Println(count2)
 }
 
 func move(position Position) (int, int) {
-	switch position.orientation {
+	switch position.Orientation {
 	// right
 	case 0:
-		return position.x + 1, position.y
+		return position.X + 1, position.Y
 	// bottom
 	case 1:
-		return position.x, position.y + 1
+		return position.X, position.Y + 1
 	// left
 	case 2:
-		return position.x - 1, position.y
+		return position.X - 1, position.Y
 	// top
 	case 3:
-		return position.x, position.y - 1
+		return position.X, position.Y - 1
 	}
 	return -1, -1
 }

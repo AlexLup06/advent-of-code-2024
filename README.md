@@ -24,3 +24,9 @@ the end I found a pretty neat solution myself without googling
 **Part 1:** I basically got the Idea on how to do it right away and solved it withing 30 minutes. Had practically no error but some typos or just little mistakes
 
 **Part 2:** For this I also got the idea right away. Still took some time to code up and code some little silly mistakes like not including the last entry in an array and stuff. But the idea worked out right away after getting the little bugs working. For both parts in total it took me like 2 hours and 15 minutes. Was also my first time doing pointers in Go, so that also took some time away to google and try out in the Go Playground. This was a nice puzzle!
+
+### Day 16
+**Part 1:** It was pretty easy. Go it working really quickly
+
+**Part 2:** This was difficult. I made the crucial mistake to turn and to go in the same step. So I was not able to compare the values with each other.
+This took me probably like 10 hours or so. Really stupid. This was again a perfect example of simple but not easy.
