@@ -29,4 +29,5 @@ the end I found a pretty neat solution myself without googling
 **Part 1:** It was pretty easy. Go it working really quickly
 
 **Part 2:** This was difficult. I made the crucial mistake to turn and to go in the same step. So I was not able to compare the values with each other.
-This took me probably like 10 hours or so. Really stupid. This was again a perfect example of simple but not easy.
+This took me probably like 10 hours or so. Really stupid. This was again a perfect example of simple but not easy. But I did it without googling or using any 
+other libraries.
