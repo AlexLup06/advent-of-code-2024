@@ -31,3 +31,16 @@ the end I found a pretty neat solution myself without googling
 **Part 2:** This was difficult. I made the crucial mistake to turn and to go in the same step. So I was not able to compare the values with each other.
 This took me probably like 10 hours or so. Really stupid. This was again a perfect example of simple but not easy. But I did it without googling or using any 
 other libraries.
+
+### Day 17
+**Part 1:** The first part was really easy. I already built a whole computer class because I thought the second part building upon it. I got it first try and quickly moved on to the second part.
+
+**Part 2:** At first I really had no idea what to do. But then I started looking into the program that is running and tried to figure out what it is doing. So I did a full program analysis and quickly found out the output is calculated like this:
+```
+	output_k = {
+		b = A[A.len-3*(k+1),A.len-3*k-1] ^ 011
+		return A[A.len-3*(k+1),A.len-3*k-1] ^ A[A.len-3*(k+1)-1-b,A.len-3*k-1-b] ^ 110
+	}
+```
+After some time I wrote down the code and ran it: Fuck it only tries one path and does not stop if the output does not match the wanted output (the program itself).
+I really did not know how to easily code this up but then *The Stack* came into my mind and with some copy pasted really simple Stack implementation in go I got it to work within 15 minutes. It prints out all possible starting values for Register A but I just need to manually choose the smallest one.
