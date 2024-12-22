@@ -44,3 +44,8 @@ other libraries.
 ```
 After some time I wrote down the code and ran it: Fuck it only tries one path and does not stop if the output does not match the wanted output (the program itself).
 I really did not know how to easily code this up but then *The Stack* came into my mind and with some copy pasted really simple Stack implementation in go I got it to work within 15 minutes. It prints out all possible starting values for Register A but I just need to manually choose the smallest one.
+
+### Day 17
+**Part 1:** Really easy, though at first I was extremely confused and I thought we walk through the map as the bytes fall. But it was actually just Dijkstra and then simulating Dijkstra for the more falling bytes.
+
+**Part 2:** Really easy. Don't even know what to say. Took me 5 minutes or so

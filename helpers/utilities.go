@@ -5,8 +5,8 @@ import (
 	"strconv"
 )
 
-func InitSlice(length int, value int) []int {
-	slice := make([]int, length)
+func InitSlice[T any](length int, value T) []T {
+	slice := make([]T, length)
 	for i := range slice {
 		slice[i] = value
 	}

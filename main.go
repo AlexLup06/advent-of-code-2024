@@ -3,5 +3,5 @@ package main
 import "alexlupatsiy.com/aoc24/solutions"
 
 func main() {
-	solutions.Day17()
+	solutions.Day18()
 }
