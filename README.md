@@ -45,7 +45,25 @@ other libraries.
 After some time I wrote down the code and ran it: Fuck it only tries one path and does not stop if the output does not match the wanted output (the program itself).
 I really did not know how to easily code this up but then *The Stack* came into my mind and with some copy pasted really simple Stack implementation in go I got it to work within 15 minutes. It prints out all possible starting values for Register A but I just need to manually choose the smallest one.
 
-### Day 17
+### Day 18
 **Part 1:** Really easy, though at first I was extremely confused and I thought we walk through the map as the bytes fall. But it was actually just Dijkstra and then simulating Dijkstra for the more falling bytes.
 
 **Part 2:** Really easy. Don't even know what to say. Took me 5 minutes or so
+
+### Day 19
+**Part 1:** Oh Boy, Oh Boy... I thought I am going to be the really smart one and wrote myself this beautiful graph that represents this language. Well it is slow as hell because it has to check every single damn option. Quickly deleted everything and just did some stupid old Stack. 100 fewer lines of code and did get me the answer within some milliseconds or so.
+
+**Part 2:** This was a hell of a ride. Of course just brute forcing did not work. Not even close. So I got to thinking. Nothing came to my mind. Is there a really smart way of doing this!? I just thought of a cache: Instead of going down all the paths of the last 15 characters lets just calculate the score for the last 15 characters and cache that. Well building the cache was really quick. But then running the whole design up until the last 15 characters again took way too long! I had no clue what to do and started doing Day 20. Then at night it came to me. I will just start from the back and work my way up and all the previous answers will be my cache. This was soooo fast!! I did look into Reddit once but only saw that my idea with the cache was correct. 
+
+### Day 20
+**Part 1:** For this one I pretty quickly got a good idea right away. Just start from the back and do Dijkstra! So now I know for each tile how far its way from the 
+end. If I now want to cheat and go from Tile A to tile B I just calculate the difference of the distance minus the cheated distance. Voilà you get the time saved
+
+**Part 2:** I Applied the same idea for this Problem, but now the possible ways of cheating is adjusted in a way that from a tile you are allowed to cheat so that
+|x|+|y|≤20 (Diamond shape). At first, I thought I need some kind of cache to safe already checked cheats. But this turned out to be really inefficient. So I removed
+it. Then I faced a stupid bug where I double counted all cheats with y=0. In the end I got it, and I am pretty proud of the solution to this Problem.
+
+### Day 21
+**Part 1:**
+
+**Part 2:**
