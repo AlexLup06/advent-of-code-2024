@@ -19,10 +19,6 @@ type CPUpossiblePath struct {
 	distance int
 }
 
-type Cheat struct {
-	start, end helpers.Coordinate
-}
-
 func Day20() {
 	file, err := os.OpenFile("./input/input20.txt", os.O_RDONLY, os.ModePerm)
 	if err != nil {
