@@ -64,6 +64,30 @@ end. If I now want to cheat and go from Tile A to tile B I just calculate the di
 it. Then I faced a stupid bug where I double counted all cheats with y=0. In the end I got it, and I am pretty proud of the solution to this Problem.
 
 ### Day 21
-**Part 1:**
+**Part 1:** OMG. This too forever. I tried and in the end did calculate the number of moves for the first robot arm to type in the code at the very and.
+Who would have thought this is a bad idea... 
 
-**Part 2:**
+**Part 2:** I could not figure out how to do this. So this was the first time I looked into reddit and just saw the words "Dynamic Programming". I learned this in Uni and have never up until now heard this term... Anyways I thought about it and pretty quickly came up with a solution in my head. But as of writing this right now it is the 3rd of January. I will finish this before the next AOC
+
+### Day 22
+**Part 1:** The first Part was really easy! Just straight up writing out what is said in the text how the secret numbers are calculated.
+
+**Part 2:** This was easy too, but my code took 40s. This is really bad and I now why. I am trying all 45.000 or so possibilities for the four delta values. I was smart enought to get down to 45.000, though because youa re able to exclude some. I could have just used a map with 45.000 keys and counted the banans for each monkey. Would have been only a loop of n^2 instead of 45.000*n^2.
+
+### Day 23
+**Part 1:** Really easy. Just built up a graph and go thorugh each node and check for triangles and save the ones already tried so no double count
+
+**Part 2:** Did not know what to do. Googled and found some Algorithm to solve Maximum Clique. Was too lazy to code it up because this seems not the point of AOC to me. Checked Reddit and this is what everyone did. But bassically the Algorithm works as follow. For every set try (in the begining a set is just a single node):for every neighbour: add neighbour to set and check whether all the nodes in the set are connected to each other. In the last iteration there should only be one set which is the maximum clique.
+
+### Day 24
+**Part 1:** Again, really really easy.
+
+**Part 2:** OMG this got to me. I had no clue what to do. Checked reddit for the second time. This is a fucking ripple carry adder and you are just supposed to reverse engineer it to find the mixed up connections
+
+### Day 25
+**Part 1:** Seems again really easy but did not do it
+
+**Part 2:** Did not even do it
+
+## Conclusion
+Really really cool! Going to do it next year for sure :) And I am going to finish the last Problems of AOC24 too! Learned a lot, especially Go, which i sued fo the first time. Fell in love with this programming language. Called some programming concepts into my brain and over all got a lot out of this whole thing. Still gotta be much faster with programming. I really have to learn how to type faster. This is really a crucials hurdle for me. 
